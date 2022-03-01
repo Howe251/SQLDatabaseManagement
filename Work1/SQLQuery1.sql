@@ -1,1 +1,1 @@
-SELECT * FROM Production.UnitMeasure
+SELECT * FROM Production.UnitMeasure;

@@ -1,5 +1,5 @@
 SELECT 
 	CountryRegionCode,
 	[Name],
-	case when CountryRegionCode = 'US' then NULL else CountryRegionCode end AS NullCountryRegionCode
+	CASE WHEN CountryRegionCode = 'US' THEN NULL ELSE CountryRegionCode END AS NullCountryRegionCode
 FROM Person.StateProvince;

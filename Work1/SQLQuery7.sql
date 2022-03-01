@@ -1,5 +1,7 @@
+DECLARE @T DATETIME
 SELECT 
-	AVG(StandardCost),
+	StandardCost,
 	StartDate,
-	EndDate
+CASE WHEN EndDate IS NULL 
+	THEN GETDATE() ELSE EndDate END AS EndDate
 FROM Production.ProductCostHistory;
