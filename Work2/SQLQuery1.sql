@@ -1,0 +1,1 @@
+SELECT MIN(size) AS MinimalSize FROM Production.Product
