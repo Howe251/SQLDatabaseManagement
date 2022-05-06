@@ -1,4 +1,4 @@
---Показывать список магазинов, заказывающих данный товар.
+п»ї--РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє РјР°РіР°Р·РёРЅРѕРІ, Р·Р°РєР°Р·С‹РІР°СЋС‰РёС… РґР°РЅРЅС‹Р№ С‚РѕРІР°СЂ.
 SELECT store_name, conditer_menu.[name]
 FROM conditer_menu_transfer_to
 INNER JOIN conditer_menu
@@ -7,13 +7,13 @@ INNER JOIN conditer_store
     ON conditer_menu_transfer_to.store_id = conditer_store.id
 WHERE menu_id = 2;
 
---Показывать список продуктов, заказываемых у данного поставщика.
+--РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє РїСЂРѕРґСѓРєС‚РѕРІ, Р·Р°РєР°Р·С‹РІР°РµРјС‹С… Сѓ РґР°РЅРЅРѕРіРѕ РїРѕСЃС‚Р°РІС‰РёРєР°.
 SELECT company_name, a.[name]
 FROM conditer_ingredients as a
 INNER JOIN conditer_suplier ON a.postavka_id = conditer_suplier.id
 WHERE conditer_suplier.id = 7;
 
---Показывать стоимость произведенного товара за отчетный период времени
+--РџРѕРєР°Р·С‹РІР°С‚СЊ СЃС‚РѕРёРјРѕСЃС‚СЊ РїСЂРѕРёР·РІРµРґРµРЅРЅРѕРіРѕ С‚РѕРІР°СЂР° Р·Р° РѕС‚С‡РµС‚РЅС‹Р№ РїРµСЂРёРѕРґ РІСЂРµРјРµРЅРё
 SELECT S2.[name], SUM(S2.cost*S1.[count]) as CostSum
 FROM conditer_produced as S1
 LEFT OUTER JOIN conditer_menu AS S2 ON S1.menu_id = S2.id
@@ -21,6 +21,6 @@ WHERE produce_date BETWEEN '2022-05-06' AND '2022-05-07'
 AND S2.id = 1
 GROUP BY S2.[name];
 
---Показывать ассортимент данного товара и цену.
+--РџРѕРєР°Р·С‹РІР°С‚СЊ Р°СЃСЃРѕСЂС‚РёРјРµРЅС‚ РґР°РЅРЅРѕРіРѕ С‚РѕРІР°СЂР° Рё С†РµРЅСѓ.
 SELECT [name], cost
 FROM conditer_menu
